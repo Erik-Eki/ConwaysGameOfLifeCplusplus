@@ -8,7 +8,7 @@
 #define OFF_COLOUR 0x00
 #define ON_COLOUR 0xFF
 
-#define LIMIT_RATE 0 // Limit loop rate for visibility
+#define LIMIT_RATE 50 // Limit loop rate for visibility
 #define TICK_RATE 50 // Tick-rate in milliseconds (if LIMIT_RATE == 1)
 
 
@@ -19,12 +19,12 @@ SDL_Surface* screenSurface = NULL;
 
 // Width & Height of cell in pixels
 // Influences screen size
-unsigned int CELL_SIZE = 2;
+unsigned int CELL_SIZE = 5;
 // Randomisation seed
 unsigned int seed;
 
-unsigned CELLMAP_WIDTH = 500;
-unsigned CELLMAP_HEIGHT = 500;
+unsigned CELLMAP_WIDTH = 200;
+unsigned CELLMAP_HEIGHT = 200;
 
 //Screen dimensions
 unsigned int SCREEN_WIDTH = CELLMAP_WIDTH * CELL_SIZE;
@@ -344,7 +344,7 @@ int main(int argc, char* argv[])
 
 			//cout << "Total Generations: " << generation<< "\nSeed: " << SEED << endl;
 
-			printf("Total Generations: %f\nSeed:%u\n", generation, seed);
+			printf("Total Generations: %lu\nSeed:%u\n", generation, seed);
 
 			////Hack to get window to stay up
 			//SDL_Event e; bool quit = false; while (quit == false) { while (SDL_PollEvent(&e)) { if (e.type == SDL_QUIT) quit = true; } }
